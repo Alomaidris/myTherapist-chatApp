@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --deep-grey: rgb(135, 135, 135);
+    --grey-color: rgb(130, 130, 130);
+    --light-grey: rgb(190, 190, 190);
+    --lighter-grey: rgb(217, 217, 217);
+    --white: #ffffff;
+    --text-black: #141313;
+
+    --fs-1: 4.2rem;
+    --fs-2: 3.8rem;
+    --fs-3: 3.2rem;
+    --fs-4: 2.5rem;
+    --fs-5: 2.4rem;
+    --fs-6: 2rem;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-800: 800;
+    
+}
+
+
+/* CSS RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+img,
+span,
+input,
+button{
+    display: block;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+address {
+    font-style: normal;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-black);
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+body.full{
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+/*  General CSS */
+.h1{
+    font-size: var(--fs-1);
+    font-weight: var(--fw-700);
+}
+
+.h4{
+    font-size: var(--fs-4);
+}
+
+.mb-2{
+    margin-bottom: 2rem;
+}
+
+main{
+    min-height: 100vh;
+}
+
+section{
+    display: flex;
+    width: 100%;   
+}
+
+.center{
+    text-align: center;
+}
+
+.w-70{
+    width: 70%;
+}
+
+.w-60{
+    width: 60%;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    margin-bottom: 5rem;
+    color: var(--text-black);
+    font-weight: 400; 
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Header CSS */
+header{
+    width: 100%;
+    height: 100px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    display: relative;
+    padding: 1.5rem;
+    background-color: var(--white);
+
+}
+
+nav .logo-btn{
+    font-size: var(--fs-4);
+    color: var(--deep-grey);
+}
+
+nav > i {
+    font-size: var(--fs-3);
+    font-weight: var(--fw-700);
+}
+
+
+nav > :is(.ri-close-line, .link-group, .btn-group){
+    display: none;
+}
+
+header.active{
+    display: flex;
+    height: 100vh;
+}
+
+header.active > nav{
+    padding-top: 3rem;
+    flex-direction: column;
+    height: 100vh;
+    align-items: flex-start;
+    gap: 4rem;
+    width: 70%;
+    justify-content: flex-start;
+}
+
+header.active > nav > .ri-menu-line {
+    display: none;
+}
+
+header.active >nav > :is(.ri-close-line, .link-group, .btn-group){
+    display: block;
+}
+
+header.active >nav > .ri-close-line{
+    position: absolute;
+    top: 3rem;
+    right: 30%;
+}
+
+header.active >nav li {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    color: var(--text-black);
+}
+
+
+header.active >nav li > a {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: var(--text-black);
+}
+
+header.active >.overlay{
+    width: 30%;
+    height: 100vh;
+    background-color: rgba(135, 135, 135, .2);
+    z-index: 1;
+}
+
+/* Login CSS */
+
+main {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.login{
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.login > h2 {
+    font-size: var(--fs-6);
+    color: var(--text-black);
+    text-align: center;
+}
+
+.login > .login-form {
+    margin-top: 2.5rem;
+}
+
+.login-form > .input-group{
+    margin-top: 1.5rem;
+}
+
+.login-form > .input-group.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+.login-form input:is([type=email],[type=text], [type=password]){
+    height: 4rem;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    outline: none;
+    border: .5px solid var(--deep-grey);
+    padding-left: 1rem;
+}
+
+.login-form > .input-group.flex-row > input[type=checkbox]{
+    width: 20px;
+}
+
+.login-form .btn.btn-grey{
+    width: 100%;
+    padding: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--lighter-grey);
+    margin-top: 1.5rem;
+}
+
+.login-form > .input-group > span{
+    margin-top: 1rem;
+}
+
+.login > p {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.login > p > a {
+    display: inline-block;
+    color: var(--text-black);
+}
+
+/** Index Page */
+.option-buttons{
+    height: 30vh;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+}
+
+.option-buttons .btn, .options .btn {
+    width: 90%;
+    background-color: black;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--white);
+}
+
+.btn.btn-individual-chat{
+    background-color: var(--light-grey);
+    color: var(--text-black);
+}
+
+/** Options */
+.options {
+    display: grid;
+    justify-content: center;
+    padding: 1rem;
+}
+.options .page-title{
+    margin-bottom: 3rem;
+}
+.options .description {
+    font-size: 1.4rem;
+    margin-block: 1rem;
+}
+
+.options > :is(.tag, .therapist-gender, .age, .media-type ){
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--deep-grey);
+    margin-bottom: 1.5rem;
+}
+
+.options :is(.media-type){
+    border-bottom: none;
+}
+
+.options .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.5rem;
+}
+
+.options  .btn-group{
+    margin-top: 1.5rem;
+}
+
+.options .btn-group > button{
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-inline: 0rem 1.5rem;
+    padding: 1rem 1rem;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--deep-grey);
+    border-radius: 5px;
+}
+
+.options > .age > input[type=number]{
+    height: 3rem;
+    outline: none;
+    border: 1px solid var(--deep-grey);
+    border-radius: 5px;
+}
+
+.options > .btn-holder{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.options > .btn-holder > .btn{
+    width: 100%;
+}

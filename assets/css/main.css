@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --deep-grey: rgb(135, 135, 135);
+    --grey-color: rgb(130, 130, 130);
+    --light-grey: rgb(190, 190, 190);
+    --lighter-grey: rgb(217, 217, 217);
+    --white: #ffffff;
+    --text-black: #141313;
+
+    --fs-1: 4.2rem;
+    --fs-2: 3.8rem;
+    --fs-3: 3.2rem;
+    --fs-4: 2.5rem;
+    --fs-5: 2.4rem;
+    --fs-6: 2rem;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-800: 800;
+    
+}
+
+
+/* CSS RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+img,
+span,
+input,
+button{
+    display: block;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+address {
+    font-style: normal;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-black);
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    max-height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+body.full{
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+/*  General CSS */
+.h1{
+    font-size: var(--fs-1);
+    font-weight: var(--fw-700);
+}
+
+.h4{
+    font-size: var(--fs-4);
+}
+
+.mb-2{
+    margin-bottom: 2rem;
+}
+
+main{
+    min-height: 100vh;
+}
+
+main.chat{
+    background-color: var(--white);
+    color: var(--text-black);
+}
+
+section{
+    display: flex;
+    width: 100%;   
+}
+
+.center{
+    text-align: center;
+}
+
+.w-70{
+    width: 70%;
+}
+
+.w-60{
+    width: 60%;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    margin-bottom: 5rem;
+    color: var(--text-black);
+    font-weight: 400; 
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Header CSS */
+header{
+    width: 100%;
+    height: 50px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    display: relative;
+    padding: 1.5rem;
+    background-color: var(--white);
+
+}
+
+nav .logo-btn{
+    font-size: var(--fs-4);
+    color: var(--deep-grey);
+}
+
+nav > i {
+    font-size: var(--fs-3);
+    font-weight: var(--fw-700);
+    color: var(--text-black);
+}
+
+
+nav > :is(.ri-close-line, .link-group, .btn-group){
+    display: none;
+}
+
+header.active{
+    display: flex;
+    height: 100vh;
+}
+
+header.active > nav{
+    padding-top: 3rem;
+    flex-direction: column;
+    height: 100vh;
+    align-items: flex-start;
+    gap: 4rem;
+    width: 70%;
+    justify-content: flex-start;
+}
+
+header.active > nav > .ri-menu-line {
+    display: none;
+}
+
+header.active >nav > :is(.ri-close-line, .link-group, .btn-group){
+    display: block;
+}
+
+header.active >nav > .ri-close-line{
+    position: absolute;
+    top: 3rem;
+    right: 30%;
+}
+
+header.active >nav li {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    color: var(--text-black);
+}
+
+
+header.active >nav li > a {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: var(--text-black);
+}
+
+header.active >.overlay{
+    width: 30%;
+    height: 100vh;
+    background-color: rgba(135, 135, 135, .2);
+    z-index: 1;
+}
+
+/* Login CSS */
+
+main {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.chat-list{
+    display: grid;
+    margin-inline: 1rem;
+}
+
+.chat-list h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+:is(.previous-chats, .online-therapist) > h3{
+    margin-block: 2rem;
+    font-size: 1.4rem;
+}
+
+:is(.previous-chats, .online-therapist) > ul > li {
+    margin-top: 1rem;
+}
+:is(.previous-chats, .online-therapist) > ul > li > a{
+    display: flex;
+    height: 4rem;
+    color: var(--text-black);
+    font-size: 1.5rem;
+    font-weight: 500;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+:is(.previous-chats, .online-therapist) > ul > li > a > div{
+    border: 3px solid var(--text-black);
+    padding: .5rem;
+    border-radius: 50%;
+}
+:is(.previous-chats > ul > li > a > i, .online-therapist > ul > li > a > i){
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/** Chat Area */
+.chat-area{
+    width: 100%;
+    padding: 1rem;
+    display: grid;
+}
+.chat-area-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--light-grey);
+    font-size: 1.4rem;
+    gap: 3rem;
+    padding-inline: 2rem;
+}
+
+.chat-area-header > a{
+    display: flex;
+    align-items: center;
+    color: var(--text-black);
+}
+
+.chat-area-header > p{
+    color: var(--text-black);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.chat-box{
+    height: 500px;
+    overflow-y: auto;
+    background-color: #f7f7f7;
+    padding: 1rem 3rem 2rem 3rem ;
+    box-shadow: inset 0 32px 32px -32px rgba(0 0 0/ 5%),
+                inset 0 -32px 32px -32px rgba(0 0 0/ 5%);
+}
+
+.chat-box .chat{
+    margin: 15px 0;
+}
+.chat-box .chat p{
+    word-wrap: break-word;
+    padding: .8rem 1rem;
+    font-size: 1.2rem;
+    box-shadow:  0 0 32px rgb(0 0 0/ 8%),
+                    0 16px 16px -16px rgb(0 0 0/ 10%);
+}
+
+.chat-box .outgoing{
+    display: flex;
+}
+
+.outgoing .details{
+    margin-left: auto;
+    max-width: calc(100% - 30px);
+}
+
+.outgoing .details p {
+    background-color: #333;
+    color: var(--white);
+    border-radius: 1.8rem 1.8rem 0 1.8rem;
+}
+
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+
+.incoming .details{
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: calc(100% - 30px);
+}
+
+.incoming .details p{
+    color: #333;
+    background-color: var(--white);
+    border-radius: 1.8rem 1.8rem 1.8rem 0;
+}
+
+.chat-box::-webkit-scrollbar{
+    width: 0px;
+}
+
+.chat-area .typing-area{
+    display: flex;
+    padding: 18px 30px;
+    justify-content: space-between ;
+}
+
+.typing-area input{
+    height: 45px; 
+    width: calc(100% - 45px);
+    font-size: 17px;
+    border: 1px solid #ccc;
+    padding: 0 13px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.typing-area button{
+    width: 45px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
